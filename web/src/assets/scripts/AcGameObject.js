@@ -30,7 +30,7 @@ export class AcGameObject {
 
         for(let i in AC_GAME_OBJECTS){
             const obj = AC_GAME_OBJECTS[i];
-            if(obj == this){
+            if(obj === this){
                 //删除
                 AC_GAME_OBJECTS.splice(i);
                 break;
