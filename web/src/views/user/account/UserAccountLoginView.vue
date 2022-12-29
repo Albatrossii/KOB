@@ -1,5 +1,5 @@
 <template>
-<ContentField>
+<ContentField v-if="!$store.state.user.pulling_info">
     <div class="row justify-content-md-center">
         <div class="col-3">
             <form @submit.prevent="login">
@@ -12,7 +12,7 @@
                     <input v-model="password" type="password" class="form-control" id="password" placeholder="请输入密码 ">
                 </div>
                 <div class="error-message">{{ error_message }}</div>
-                <button type="submit" class="btn btn-outline-secondary">提交</button>
+                <button type="submit" class="btn btn-secondary">提交</button>
             </form>
         </div>
     </div>
@@ -35,6 +35,22 @@ export default{
         let password = ref('');
         let error_message = ref('');
 
+        const jwt_token = localStorage.getItem("jwt_token");
+        if(jwt_token){
+            store.commit("updateToken",jwt_token);
+            store.dispatch("getinfo",{
+                success() {
+                    router.push({ name: "home" });
+                    store.commit("updatePullingInfo",false);
+                },
+                error(){
+                    store.commit("updatePullingInfo",false);
+                }
+            })
+        }else{
+            store.commit("updatePullingInfo",false);
+        }
+        
         const login = () =>{
             error_message.value = "";
             store.dispatch("login",{
@@ -47,8 +63,7 @@ export default{
                               //成功后跳转页面
                             router.push({ name: 'home'});
                         }
-                    })
-                  
+                    })    
                 },
                 error() {
                     //出错了
@@ -60,7 +75,7 @@ export default{
             username,
             password,
             error_message,
-            login
+            login,
         }
     }
 }

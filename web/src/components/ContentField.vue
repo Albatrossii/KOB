@@ -1,6 +1,6 @@
 <template>
-    <div class="container content-field">
-        <div class="card">
+    <div class="container content-field w-75">
+        <div class="card ">
             <dic class="card-body">
                 <slot>
 
