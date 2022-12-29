@@ -25,7 +25,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if(user == null){
             throw new RuntimeException("用户不存在");
         }
-
         return new UserDetailsImpl(user);
     }
 }
