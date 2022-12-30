@@ -31,12 +31,12 @@ public class AddServiceImpl implements AddService {
         Map<String,String> map = new HashMap<>();
 
         if(title == null || title.length() == 0){
-            map.put("errpr_message","标题不能为空");
+            map.put("error_message","标题不能为空");
             return map;
         }
 
         if(title.length() > 100){
-            map.put("errpr_message","标题长度不能大于100");
+            map.put("error_message","标题长度不能大于100");
             return map;
         }
 
@@ -45,17 +45,17 @@ public class AddServiceImpl implements AddService {
         }
 
         if(description.length() > 300){
-            map.put("errpr_message","Bot的描述长度不能大于300");
+            map.put("error_message","Bot的描述长度不能大于300");
             return map;
         }
 
         if(content == null || content.length() == 0){
-            map.put("errpr_message","代码不能为空");
+            map.put("error_message","代码不能为空");
             return map;
         }
 
         if(content.length() > 10000){
-            map.put("errpr_message","代码长度不能超过10000");
+            map.put("error_message","代码长度不能超过10000");
             return map;
         }
 
