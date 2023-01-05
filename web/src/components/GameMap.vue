@@ -8,17 +8,19 @@
 
 <script>
 import { GameMap } from '@/assets/scripts/GameMap'
+import { useStore } from 'vuex';
 import { ref , onMounted } from 'vue'
 
 export default{
     setup() {
+        const store = useStore();
         //一开始指向为空
         let parent = ref(null);
         let canvas = ref(null);
 
         //整个组件挂载完需要创建一个游戏对象
         onMounted(() => {
-            new GameMap(canvas.value.getContext('2d'), parent.value)
+            new GameMap(canvas.value.getContext('2d'), parent.value, store)
             
         });
 
