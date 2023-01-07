@@ -7,7 +7,7 @@ export default {
         photo: "",
         token: "",
         is_login: false,
-        pulling_info:true,//是否正在从云端拉取信息
+        pulling_info: true, //是否正在拉取信息
     },
     getters: {
     },
@@ -28,7 +28,7 @@ export default {
             state.token = "";
             state.is_login = false;
         },
-        updatePullingInfo(state,pulling_info){
+        updatePullingInfo(state, pulling_info){
             state.pulling_info = pulling_info;
         }
     },
@@ -43,7 +43,6 @@ export default {
                 },
                 success(resp) {
                     if (resp.error_message === "success") {
-                        //登陆信息持久化
                         localStorage.setItem("jwt_token", resp.token);
                         context.commit("updateToken", resp.token);
                         data.success(resp);

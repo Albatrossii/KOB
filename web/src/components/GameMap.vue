@@ -20,8 +20,9 @@ export default{
 
         //整个组件挂载完需要创建一个游戏对象
         onMounted(() => {
-            new GameMap(canvas.value.getContext('2d'), parent.value, store)
-            
+            store.commit(
+                "updateGameObject",
+                new GameMap(canvas.value.getContext('2d'), parent.value, store));       
         });
 
         return {
