@@ -14,15 +14,13 @@ import java.util.Date;
 @AllArgsConstructor
 public class Bot {
     @TableId(type = IdType.AUTO)
-    private  Integer id;
+    private Integer id;
     private Integer userId;
     private String title;
     private String description;
     private String content;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" ,timezone = "Asia/Shanghai")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Shanghai")
     private Date createtime;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss" ,timezone = "Asia/Shanghai")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Shanghai")
     private Date modifytime;
-
 }

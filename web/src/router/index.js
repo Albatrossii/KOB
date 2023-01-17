@@ -3,10 +3,12 @@ import PkIndexView from '../views/pk/PkIndexView'
 import NotFound from '../views/error/NotFound'
 import RankListView from '../views/ranklist/RanklistIndexView'
 import RecordIndexView from '../views/record/RecordIndexView'
+import RecordContentView from '../views/record/RecordContentView'
 import UserBotIndexView from '../views/user/bot/UserBotIndexView'
 import UserAccountLoginView from '../views/user/account/UserAccountLoginView'
 import UserAccountRegisterView from '../views/user/account/UserAccountRegisterView'
 import store from '@/store/index'
+
 
 
 const routes = [
@@ -34,6 +36,15 @@ const routes = [
         requestAuth: true,
       }
     },
+    {
+      path: "/record/:recordId/",
+      name: "record_content",
+      component: RecordContentView,
+      meta: {
+        requestAuth: true,
+      }
+    },
+  
     {
       path:"/ranklist/",
       component:RankListView,

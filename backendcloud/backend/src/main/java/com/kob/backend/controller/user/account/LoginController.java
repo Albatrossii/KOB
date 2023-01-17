@@ -10,14 +10,13 @@ import java.util.Map;
 
 @RestController
 public class LoginController {
-
     @Autowired
     private LoginService loginService;
 
     @PostMapping("/user/account/token/")
-    public Map<String,String> getToken(@RequestParam Map<String,String> map){
+    public Map<String, String> getToken(@RequestParam Map<String, String> map) {
         String username = map.get("username");
-        String pwd = map.get("password");
-        return loginService.getToken(username,pwd);
+        String password = map.get("password");
+        return loginService.getToken(username, password);
     }
 }

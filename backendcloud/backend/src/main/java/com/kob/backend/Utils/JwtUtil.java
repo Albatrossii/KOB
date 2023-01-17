@@ -1,4 +1,4 @@
-package com.kob.backend.Utils;
+package com.kob.backend.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
@@ -15,7 +15,7 @@ import java.util.UUID;
 @Component
 public class JwtUtil {
     public static final long JWT_TTL = 60 * 60 * 1000L * 24 * 14;  // 有效期14天
-    public static final String JWT_KEY = "SDFGjhdsfalshdfHFdsjkabcdsfds121232131afasdfac";//密钥 自己随机的一个字符串
+    public static final String JWT_KEY = "SDFGjhdsfalshdfHFdsjkabcdsfds121232131afasdfac";
 
     public static String getUUID() {
         return UUID.randomUUID().toString().replaceAll("-", "");
@@ -60,4 +60,3 @@ public class JwtUtil {
                 .getBody();
     }
 }
-

@@ -1,19 +1,18 @@
 <template>
     <div ref="parent" class="gamemap">
-        <canvas ref="canvas" tabindex="0">
-
-        </canvas>
+        <canvas ref="canvas" tabindex="0"></canvas>
     </div>
 </template>
 
 <script>
-import { GameMap } from '@/assets/scripts/GameMap'
-import { useStore } from 'vuex';
-import { ref , onMounted } from 'vue'
+import { GameMap } from "@/assets/scripts/GameMap";
+import { ref, onMounted } from 'vue'
+import { useStore } from "vuex";
 
-export default{
+export default {
     setup() {
         const store = useStore();
+
         //一开始指向为空
         let parent = ref(null);
         let canvas = ref(null);
@@ -22,7 +21,8 @@ export default{
         onMounted(() => {
             store.commit(
                 "updateGameObject",
-                new GameMap(canvas.value.getContext('2d'), parent.value, store));       
+                new GameMap(canvas.value.getContext('2d'), parent.value, store)
+            );
         });
 
         return {
@@ -34,7 +34,7 @@ export default{
 </script>
 
 <style scoped>
-div.gamemap{
+div.gamemap {
     width: 100%;
     height: 100%;
     display: flex;

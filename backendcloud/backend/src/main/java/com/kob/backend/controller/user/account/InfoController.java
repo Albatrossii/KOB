@@ -9,12 +9,11 @@ import java.util.Map;
 
 @RestController
 public class InfoController {
-
     @Autowired
     private InfoService infoService;
 
     @GetMapping("/user/account/info/")
-    public Map<String,String> getinfo(){
-        return infoService.getInfo();
+    public Map<String, String> getinfo() {
+        return infoService.getinfo();
     }
 }

@@ -1,4 +1,4 @@
-package com.kob.backend.consumer.Utils;
+package com.kob.backend.consumer.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Cell {
-    int x,y;
+    int x, y;
 }

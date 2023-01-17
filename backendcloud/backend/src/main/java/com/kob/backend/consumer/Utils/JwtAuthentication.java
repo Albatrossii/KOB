@@ -1,6 +1,6 @@
-package com.kob.backend.consumer.Utils;
+package com.kob.backend.consumer.utils;
 
-import com.kob.backend.Utils.JwtUtil;
+import com.kob.backend.utils.JwtUtil;
 import io.jsonwebtoken.Claims;
 
 public class JwtAuthentication {
